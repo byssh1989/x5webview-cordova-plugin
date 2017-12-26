@@ -51,7 +51,8 @@ import java.util.Hashtable;
  * CordovaChromeClient.
  */
 public class X5WebViewClient extends WebViewClient {
-
+    private static String DEFAULT_REFERER="https://www.dota4.xin/webapps/";
+	
     private static final String TAG = "X5WebViewClient";
     protected final X5WebViewEngine parentEngine;
     private boolean doClearHistory = false;
@@ -74,6 +75,12 @@ public class X5WebViewClient extends WebViewClient {
      */
 	@Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	if(url.startsWith("https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb")){
+            Map headerMap=new HashMap();
+            headerMap.put("Referer",DEFAULT_REFERER);
+            view.loadUrl(url,headerMap);
+            return true;
+        }
         return parentEngine.client.onNavigationAttempt(url);
     }
 
