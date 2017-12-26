@@ -1,3 +1,5 @@
+ # Explain
+本项目只是简单 forked了 腾讯浏览服务(TBS)为cordova框架提供的用于android平台的cordova插件 。但为了正常唤起H5支付，做了些小修改。
  # x5webview-cordova-plugin
 x5webview-cordova-plugin 是腾讯浏览服务(TBS)为cordova框架提供的用于android平台的cordova插件，旨在为android平台提供更好的webview浏览体验．
 
